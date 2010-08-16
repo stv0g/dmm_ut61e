@@ -1,0 +1,51 @@
+dmmut61e - UNI-TREND UT61E Digital Multimeter
+---------------------------------------------
+Copyright (C) 2009	Steffen Vogel (info@steffenvogel.de)
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+
+Dieses Programm liest den seriellen Datenstrom eines UNI TREND UT61E Digitalmultimeters ein und gibt ihn als CSV aus.
+In diesem Format können die Daten ausgewertet werden oder gleich mit dem mitgelieferten Skript (graph) und gnuplot dargestellt werden.
+
+
+USAGE
+---------------------------------------------
+
+dmmut61e /dev/ttyS0
+graph /dev/ttyS0
+
+
+DEPENDENCIES
+---------------------------------------------
+
+grep, cut, gnuplot, tail, bash
+
+
+CHANGELOG
+---------------------------------------------
+
+29.11.2009 - 0.01
+	- Initial version
+
+
+CONTACT
+---------------------------------------------
+
+Steffen Vogel
+info@steffenvogel.de
+www.steffenvogel.de
+
+Please send patches, bug reports, hints and donations via mail!

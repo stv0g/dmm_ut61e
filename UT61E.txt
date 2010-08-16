@@ -1,0 +1,112 @@
+UT61E: Handmultimeter der chinesischen Firma UNI-Trend
+Vergleichbare Paketisierung: UT61B, identisch
+Vergleichbares Protokoll: UT70B, aber verschieden genug
+
+Counts: 22000 (5-stellig)
+DCB: 19200 Baud,7,1,Odd,DTR+,RTS-
+Paket: Länge 14, TotalTimeOut: 1000?, Markierung: "\r\n", eindeutig
+UT61E.exe: HidD_SetFeature: magisches Byte immer noch 3 - Software geht nicht!
+
+			 0  1  2  3  4  5  6  7  8  9 10 11 12 13
+
+DC  0.0000 V AUTO BG	30 30 30 30 30 30 3B 30 30 30 3A 30 0D 0A
+DC  0.0000 V MANU BG	30 30 30 30 30 30 3B 30 30 30 38 30 0D 0A
+DC   0.000 V MANU BG	31 30 30 30 30 30 3B 30 30 30 38 30 0D 0A	UT61E.EXE zeigt stets führende Nullen
+DC    0.00 V MANU BG	32 30 30 30 30 30 3B 30 30 30 38 30 0D 0A
+DC     0.0 V MANU BG	33 30 30 30 30 30 3B 30 30 30 38 30 0D 0A
+DC -0.0000 V M. BG Rel	30 30 30 30 30 30 3B 30 32 30 38 30 0D 0A
+DC  0.0197 V M. BG MAX	30 30 30 31 39 37 3B 30 30 34 38 30 0D 0A
+DC -0.0222 V M. BG MIN	30 30 30 32 32 32 3B 34 30 32 38 30 0D 0A
+DC    0.00 Hz AUTO	30 30 30 30 30 30 3B 30 30 30 3B 30 0D 0A 	
+DC  0.0000 V A. LowBat	30 30 30 30 30 30 3B 32 30 30 3A 30 0D 0A 	
+
+DC - 30.55 mV MANU BG	34 30 33 30 35 35 3B 34 30 30 38 30 0D 0A	Keine Bereichsumschaltung!
+AC   81.53 mV MANU BG	34 30 38 31 35 33 3B 30 30 30 34 30 0D 0A
+DC    0.00 Hz AUTO	30 30 30 30 30 30 3B 30 30 30 3B 30 0D 0A 	unabhängig ob V- oder mV-Bereich!
+DC    50.0 Hz AUTO	31 30 30 35 30 30 3B 30 30 30 3B 30 0D 0A 	
+DC    49.4 % MANU	30 30 30 34 39 34 3B 38 30 30 39 30 0D 0A 	
+    UL .   % MANU	30 30 30 30 30 30 3B 38 30 38 39 30 0D 0A 	
+
+     0L.   MOhm AUTO	36 32 32 35 38 30 33 31 30 30 32 30 0D 0A
+     0L.   MOhm MANU	36 32 32 35 38 30 33 31 30 30 30 30 0D 0A
+      0.00 MOhm MANU	36 30 30 30 30 30 33 30 30 30 30 30 0D 0A
+     0L.   Ohm MANU	30 32 32 35 38 30 33 31 30 30 30 30 0D 0A
+     .0L   kOhm MANU	31 32 32 35 38 30 33 31 30 30 30 30 0D 0A
+     0.L   kOhm MANU	32 32 32 35 38 30 33 31 30 30 30 30 0D 0A
+     0L.   kOhm MANU	33 32 32 35 38 30 33 31 30 30 30 30 0D 0A
+     .0L   MOhm MANU	34 32 32 35 38 30 33 31 30 30 30 30 0D 0A
+     0.L   MOhm MANU	35 32 32 35 38 30 33 31 30 30 30 30 0D 0A
+     0L.   Ohm M. Pieps	30 32 32 35 38 30 35 31 30 30 30 30 0D 0A	Keine Bereichsumschaltung!
+     .0L   V MANU Diode	30 32 32 35 38 30 31 31 30 30 30 30 0D 0A	Keine Bereichsumschaltung!
+
+     0.042 nF AUTO	30 30 30 30 34 32 36 30 30 30 32 30 0D 0A 	
+      0.03 nF MANU	31 30 30 30 30 33 36 30 30 30 30 30 0D 0A
+    0.0000 µF MANU	32 30 30 30 30 30 36 30 30 30 30 30 0D 0A 	
+     0.000 µF MANU	33 30 30 30 30 30 36 30 30 30 30 30 0D 0A 	
+      0.00 µF MANU	34 30 30 30 30 30 36 30 30 30 30 30 0D 0A 	
+    0.0000 mF MANU	35 30 30 30 30 30 36 30 30 30 30 30 0D 0A 	
+     0.000 mF MANU	36 30 30 30 30 30 36 30 30 30 30 30 0D 0A 	
+      0.00 mF MANU	37 30 30 30 30 30 36 30 30 30 30 30 0D 0A 	
+
+      0.00 Hz AUTO	30 30 30 30 30 30 32 30 30 30 32 30 0D 0A 	
+       0.0 Hz MANU	31 30 30 30 30 30 32 30 30 30 30 30 0D 0A 	
+    0.0000 kHz MANU	Diesen Bereich gibt es nicht!
+     0.000 kHz MANU	33 30 30 30 30 30 32 30 30 30 30 30 0D 0A 	
+      0.00 kHz MANU	34 30 30 30 30 30 32 30 30 30 30 30 0D 0A 	
+    0.0000 MHz MANU	35 30 30 30 30 30 32 30 30 30 30 30 0D 0A 	
+     0.000 MHz MANU	36 30 30 30 30 30 32 30 30 30 30 30 0D 0A 	
+      0.00 MHz MANU	37 30 30 30 30 30 32 30 30 30 30 30 0D 0A 	
+    UL .   % MANU	30 30 30 30 30 30 32 38 30 38 30 30 0D 0A	UT61E.EXE zeigt "00L0.0 %"
+      16.3 % MANU	34 30 30 31 36 33 32 38 30 30 30 30 0D 0A 	
+
+DC    0.00 µA AUTO	30 30 30 30 30 30 3D 30 30 30 3A 30 0D 0A	UT61E.EXE zeigt u.a. auch den Bereich: ±220
+DC     0.0 µA MANU	31 30 30 30 30 30 3D 30 30 30 38 30 0D 0A	UT61E.EXE zeigt hier den Bereich falsch!
+AC     0.9 µA MANU	31 30 30 30 30 39 3D 30 30 30 34 30 0D 0A
+AC    0.00 Hz AUTO	30 30 30 30 30 30 3D 30 30 30 37 30 0D 0A
+AC  UL .   % MANU	30 30 30 30 30 30 3D 38 30 38 35 30 0D 0A 	
+
+AC   0.007 mA AUTO	30 30 30 30 30 37 3F 30 30 30 36 30 0D 0A
+AC    0.03 mA AUTO	31 30 30 30 30 33 3F 30 30 30 34 30 0D 0A
+
+AC   0.016 A MANU	30 30 30 30 31 36 30 30 30 30 34 30 0D 0A 	
+AC   0.000 A MANU HOLD	30 30 30 30 30 30 30 30 30 30 34 32 0D 0A 	
+
+
+Byte			6	5	4	3	2	1	0
+[0]	Bereich		0	1	1	0	====siehe unten===
+[1]	1. Ziffer	0	1	1	===========Ziffer=========
+[2]	2. Ziffer	0	1	1	===========Ziffer=========
+[3]	3. Ziffer	0	1	1	===========Ziffer=========
+[4]	4. Ziffer	0	1	1	===========Ziffer=========
+[5]	5. Ziffer	0	1	1	===========Ziffer=========
+[6]	Schalterst.	0	1	1	========siehe unten=======
+[7]	Info		0	1	1	%	NEG	LowBat	OVL
+[8]			0	1	1	0	0	Rel	0
+[9]			0	1	1	UL	MAX	MIN	0	// MIN und MAX wird wechselweise übertragen
+[10]	Kopplung	0	1	1	DC	AC	AUTO	Hz	// DC und AC nie kombiniert	
+[11]			0	1	1	0	0	HOLD	0				
+[12]	'\r'		0	0	0	1	1	0	1
+[13]	'\n'		0	0	0	1	0	1	0
+
+Bereich (Byte[0]):	V	mV	Ohm	F	Hz	µA	mA	A	%
+	'0'		2.2	-	220	22n	220	220µ	22m	10	*
+	'1'		22	-	2.2k	220n	2200	2200µ	220m	-	*
+	'2'		220	-	22k	2.2µ	-	-	-	-	-
+	'3'		1000	-	220k	22µ	22k	-	-	-	*
+	'4'		-	220m	2.2M	220µ	220k	-	-	-	*
+	'5'		-	-	22M	2.2m	2.2M	-	-	-	*
+	'6'		-	-	220M	22m	22M	-	-	-	*
+	'7'		-	-	-	220m	220M	-	-	-	*
+
+*: Tastverhältnis-Anzeige: Bereichsangabe bezieht sich auf Frequenzmessung
+
+Schalterstellung (Byte[6]):
+	'0'	A
+	'1'	Diode
+	'2'	Hz
+	'3'	Ohm
+	'5'	Pieps
+	'6'	F
+	';'(3B)	V, mV
+	'='(3D)	µA
+	'?'(3F)	mA

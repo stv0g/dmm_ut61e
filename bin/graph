@@ -1,0 +1,58 @@
+#!/bin/bash
+
+PORT=/dev/ttyUSB0
+
+./Debug/DMM $1 > /tmp/dmm_data.csv &
+echo "Start sampling"
+sleep 3
+
+cat > /tmp/dmm_plot.cmd << EOF
+unit = "\`tail -1 /tmp/dmm_data.csv | cut -d ";" -f 6 -s\`"
+
+set terminal x11
+set terminal x11 enhanced font "arial,15"
+set terminal x11 title "Digital Multimeter"
+set terminal x11 noraise
+
+unset label
+
+set key nobox at character 125, 5
+set border 3
+set grid
+set autoscale y
+set xrange [0:50]
+set grid noxtics back
+
+set ylabel unit
+
+set label " \`tail -1 /tmp/dmm_data.csv | cut -d ";" -f 2 -s\` " . unit at character 1, 2 font "arial,60"
+
+set label "Min: \`tail -1 /tmp/dmm_data.csv | cut -d ";" -f 4 -s\` " . unit at character 45, 3
+set label "Max: \`tail -1 /tmp/dmm_data.csv | cut -d ";" -f 3 -s\` " . unit at character 45, 2
+set label "Avg: \`tail -1 /tmp/dmm_data.csv | cut -d ";" -f 5 -s\` " . unit at character 45, 1
+
+set label "AC/DC: \`tail -1 /tmp/dmm_data.csv | cut -d ";" -f 7 -s\` " at character 80, 3
+set label "Range: \`tail -1 /tmp/dmm_data.csv | cut -d ";" -f 8 -s\` " at character 80, 2
+set label "Sample: \`tail -1 /tmp/dmm_data.csv | cut -d ";" -f 1 -s\` " at character 80, 1
+
+set label "by Steffen Vogel" at character 100, 2
+set label "www.steffenvogel.de" at character 100, 1
+
+set bmargin 7
+
+set datafile separator ";"
+plot "< tail -n 50 /tmp/dmm_data.csv" using 0:2 title "Value" smooth unique,\
+"< tail -n 50 /tmp/dmm_data.csv" using 0:5 title "Avarage" smooth csplines
+
+reread
+EOF
+
+echo "Start plotting..."
+
+gnuplot -geometry 1000x600 /tmp/dmm_plot.cmd
+
+echo "Remove temporary files"
+rm /tmp/dmm_data.csv
+rm /tmp/dmm_plot.cmd
+
+killall DMM
